@@ -1,0 +1,15 @@
+---
+
+default: --publish-quiet -p bdd -p dev -p chrome
+bdd: -f pretty
+dots: -f progress
+html: -f html -o logs/report.html
+allure: --format AllureCucumber::CucumberFormatter --out=logs/allure
+
+dev: CONFIG=dev.yml
+homolog: CONFIG=homolog.yml
+
+firefox: BROWSER=firefox
+firefox_headless: BROWSER=fire_headless
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless

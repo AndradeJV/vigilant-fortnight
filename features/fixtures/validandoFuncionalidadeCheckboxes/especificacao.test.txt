@@ -1,0 +1,8 @@
+Funcionalidade: Validar funcionamento da página de checkboxes
+
+
+1. Marcando filmes
+    1.1. Acessar portal
+    1.2. Clicar no link checkboxes
+    1.3. Selecionar um ou mais filmes
+    1.4. Validar seleção
