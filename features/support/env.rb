@@ -3,7 +3,7 @@ require "capybara/cucumber"
 require "capybara/dsl"
 require "rspec"
 require "selenium-webdriver"
-# require "webdrivers"
+require "webdrivers"
 
 
 CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/environments/#{ENV["CONFIG"]}"))
