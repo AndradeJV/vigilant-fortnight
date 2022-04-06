@@ -1,0 +1,31 @@
+name: Tests - Homolog
+
+on:
+  push:
+    branches: [homolog]
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.3
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get -yqq install libpq-dev build-essential libcurl4-openssl-dev
+          bundle install --jobs 4 --retry 3
+      - name: Run Tests
+        run: |
+          bundle install
+          bundle exec cucumber -t @exec
